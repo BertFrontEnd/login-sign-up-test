@@ -1,0 +1,24 @@
+h1 {
+  display: block;
+  position: relative;
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+}
+h1::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 40px;
+  content: "";
+  background: yellow;
+  background-image: url(./assets/icons/person.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+img {
+  width: 150px;
+  height: auto;
+}
