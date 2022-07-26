@@ -1,7 +1,7 @@
 window.addEventListener('load', () => {
   let dates = document.querySelectorAll('.d-name__value');
   dates.forEach((el) => {
-    if (el.value == 21) {
+    if (el.value == '21') {
       el.setAttribute('selected', 'selected');
     }
   });
