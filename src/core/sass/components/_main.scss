@@ -1,0 +1,240 @@
+.main {
+  .main__wrapper {
+    @include alignment(flex-start, flex-start, row);
+    max-width: 665px;
+    height: 481px;
+    background-color: $primary-background-color;
+
+    .main__title {
+      height: 100%;
+      width: 137px;
+      transform: scale(-1);
+
+      .title__text {
+        width: inherit;
+        height: inherit;
+        padding-top: 24px;
+        @extend %secondary-font;
+        @include font-size(4.9rem, 400);
+        color: $sign-up-text-color;
+        writing-mode: vertical-lr;
+        background-color: $sign-up-background-color;
+        user-select: none;
+      }
+    }
+
+    .main__form {
+      padding: 40px 22px 0 20px;
+
+      .form__title {
+        overflow: hidden;
+        width: 484px;
+        @include font-size(2.2rem, 500);
+        line-height: 2.6rem;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+
+      .from__text {
+        overflow: hidden;
+        width: 484px;
+        @include font-size(1.4rem, 300);
+        line-height: 1.6rem;
+        margin-bottom: 20px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+
+      .form__input {
+        @include alignment(flex-start, flex-start, row);
+        flex-wrap: wrap;
+        row-gap: 18px;
+        column-gap: 15px;
+        margin-bottom: 102px;
+
+        .input__box {
+          position: relative;
+          @include alignment(flex-start, flex-start, column);
+          row-gap: 3px;
+          width: 235px;
+
+          .box__n-name {
+            margin-bottom: 2px;
+            position: relative;
+            cursor: pointer;
+          }
+
+          .box__item {
+            @include alignment(space-between, center, row);
+            width: 236px;
+
+            .item__select {
+              position: relative;
+
+              .select__d-name,
+              .select__m-name,
+              .select__y-name {
+                width: 100%;
+                @include font-size(1.4rem, 400);
+                color: $primary-text-color;
+                line-height: 1.6rem;
+                cursor: pointer;
+              }
+
+              .select__d-line,
+              .select__m-line,
+              .select__y-line {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 1px;
+                background-color: $border-background-color;
+              }
+            }
+
+            .d-select {
+              width: 57px;
+            }
+
+            .m-select {
+              width: 91px;
+            }
+
+            .y-select {
+              width: 67px;
+            }
+          }
+
+          .text {
+            @include font-size(1.2rem, 300);
+            color: $placeholder-text-color;
+            line-height: 1.4rem;
+          }
+
+          .name {
+            width: 100%;
+            @include font-size(1.4rem, 400);
+            color: $primary-text-color;
+            line-height: 1.6rem;
+          }
+
+          .name-error {
+            color: $error-text-color;
+          }
+
+          .line {
+            width: 100%;
+            height: 1px;
+            background-color: $border-background-color;
+          }
+
+          .line-error {
+            position: relative;
+            bottom: 1px;
+            height: 2px;
+            background-color: $border-error-background-color;
+          }
+
+          .check {
+            display: none;
+            position: absolute;
+            right: 0;
+            bottom: 8px;
+            width: 12px;
+            height: 8px;
+            background-image: url(./assets/icons/check.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            opacity: 0;
+            @extend %transition;
+          }
+
+          .check-true {
+            display: block;
+            opacity: 1;
+          }
+
+          .arrow {
+            position: absolute;
+            bottom: 9px;
+            right: 0;
+            width: 8px;
+            height: 4px;
+            background-image: url(./assets/icons/arrow-down.svg);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            cursor: pointer;
+          }
+
+          .box__checkbox {
+            @include alignment(flex-start, center, row);
+            column-gap: 10px;
+
+            .checkbox__g-name {
+              position: relative;
+              @include alignment(flex-start, center, row);
+              padding-left: 18px;
+              height: 24px;
+              cursor: pointer;
+
+              .g-name__value {
+                &:checked {
+                  + .g-name__check {
+                    display: block;
+                    opacity: 1;
+                  }
+                }
+              }
+
+              .g-name__circle,
+              .g-name__check {
+                position: absolute;
+                top: 50%;
+                left: 0;
+                border-radius: 50%;
+                border: 1px solid $radio-background-color;
+                transform: translateY(-50%);
+              }
+
+              .g-name__circle {
+                width: 12px;
+                height: 12px;
+              }
+
+              .g-name__check {
+                display: none;
+                left: 3px;
+                width: 6px;
+                height: 6px;
+                background-color: $radio-background-color;
+                position: 0;
+                @extend %transition;
+              }
+            }
+          }
+        }
+      }
+
+      .form__submit {
+        @include alignment(space-between, center, row);
+
+        .submit__login {
+          @include font-size(1.3rem, 300);
+          color: $secondary-text-color;
+        }
+
+        .submit__complete {
+          .complete__button {
+            padding: 5px 26px 6px 25px;
+            @extend %secondary-font;
+            @include font-size(1.4rem, 400);
+            color: $sign-up-text-color;
+            background-color: $sign-up-background-color;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
