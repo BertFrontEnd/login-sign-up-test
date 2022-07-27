@@ -2,6 +2,12 @@
   transition: all 0.3s ease-out;
 }
 
+%ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 %primary-font {
   font-family: 'WorkSans', sans-serif;
 }

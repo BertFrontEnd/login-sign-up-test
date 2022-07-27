@@ -20,3 +20,15 @@ window.addEventListener('load', () => {
     }
   });
 });
+
+/**
+ * 3. Write the function to sum added arguments by chain of calls
+ * @param {Number} a Number to add
+ * @example sum(5)(3)()   // 8
+ */
+function add(a) {
+  return function (b) {
+    return a + b;
+  };
+}
+console.log(add(6)(8)());

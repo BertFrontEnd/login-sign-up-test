@@ -1,7 +1,7 @@
 .main {
   .main__wrapper {
     @include alignment(flex-start, flex-start, row);
-    max-width: 665px;
+    /* max-width: 665px; */
     height: 481px;
     background-color: $primary-background-color;
 
@@ -18,31 +18,27 @@
         @include font-size(4.9rem, 400);
         color: $sign-up-text-color;
         writing-mode: vertical-lr;
+        @extend %ellipsis;
         background-color: $sign-up-background-color;
         user-select: none;
       }
     }
 
     .main__form {
+      width: 528px;
       padding: 40px 22px 0 20px;
 
       .form__title {
-        overflow: hidden;
-        width: 484px;
         @include font-size(2.2rem, 500);
         line-height: 2.6rem;
-        white-space: nowrap;
-        text-overflow: ellipsis;
+        @extend %ellipsis;
       }
 
-      .from__text {
-        overflow: hidden;
-        width: 484px;
+      .form__text {
+        margin-bottom: 20px;
         @include font-size(1.4rem, 300);
         line-height: 1.6rem;
-        margin-bottom: 20px;
-        white-space: nowrap;
-        text-overflow: ellipsis;
+        @extend %ellipsis;
       }
 
       .form__input {
@@ -107,9 +103,11 @@
           }
 
           .text {
+            width: 100%;
             @include font-size(1.2rem, 300);
             color: $placeholder-text-color;
             line-height: 1.4rem;
+            @extend %ellipsis;
           }
 
           .name {
@@ -220,18 +218,115 @@
         @include alignment(space-between, center, row);
 
         .submit__login {
+          width: 150px;
           @include font-size(1.3rem, 300);
           color: $secondary-text-color;
+
+          .login__text {
+            @extend %ellipsis;
+          }
         }
 
         .submit__complete {
           .complete__button {
+            width: 154px;
             padding: 5px 26px 6px 25px;
             @extend %secondary-font;
             @include font-size(1.4rem, 400);
             color: $sign-up-text-color;
+            @extend %ellipsis;
             background-color: $sign-up-background-color;
             cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $width-tablet-min) and (max-width: $width-tablet-max) {
+  .main {
+    .main__wrapper {
+      height: 700px;
+
+      .main__title {
+        width: 90px;
+      }
+
+      .main__form {
+        width: 280px;
+        padding: 40px 22px 0 22px;
+
+        .form__text {
+          display: inline-block;
+          white-space: initial;
+          text-overflow: clip;
+        }
+
+        .form__input {
+          margin-bottom: 50px;
+        }
+
+        .form__submit {
+          @include alignment(space-between, center, column);
+          row-gap: 5px;
+
+          .submit__login {
+            order: 2;
+          }
+
+          .submit__complete {
+            order: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $width-mobile-min) and (max-width: $width-mobile-max) {
+  .main {
+    .main__wrapper {
+      @include alignment(flex-start, flex-start, column);
+      height: 700px;
+
+      .main__title {
+        height: initial;
+        width: 100%;
+        transform: scale(1);
+
+        .title__text {
+          padding-top: 5px;
+          padding-right: 15px;
+          padding-bottom: 5px;
+          @include font-size(2.9rem, 400);
+          writing-mode: inherit;
+          text-align: right;
+        }
+      }
+
+      .main__form {
+        width: 280px;
+        padding: 22px 22px 0 22px;
+
+        .form__text {
+          white-space: initial;
+        }
+
+        .form__input {
+          margin-bottom: 30px;
+        }
+
+        .form__submit {
+          @include alignment(space-between, center, column);
+          row-gap: 5px;
+
+          .submit__login {
+            order: 2;
+          }
+
+          .submit__complete {
+            order: 1;
           }
         }
       }
