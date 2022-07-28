@@ -1,3 +1,4 @@
+// box-model
 @mixin alignment($justify-center, $align-center, $direction) {
   display: flex;
   justify-content: $justify-center;
@@ -5,6 +6,7 @@
   flex-direction: $direction;
 }
 
+// typography
 @mixin font-size($size, $weight) {
   font-size: $size;
   font-weight: $weight;

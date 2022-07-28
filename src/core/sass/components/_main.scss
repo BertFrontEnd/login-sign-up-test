@@ -1,194 +1,265 @@
 .main {
+  // position
   position: relative;
+  // box-model
   overflow: hidden;
 
   .main__wrapper {
+    // box-model
     @include alignment(flex-start, flex-start, row);
     height: 481px;
+    // decor
     background-color: $primary-background-color;
 
     .main__title {
+      // position
       z-index: 2;
+      // box-model
       height: 100%;
       width: 137px;
+      // transition
       transform: scale(-1);
 
       .title__text {
+        // box-model
         width: inherit;
         height: inherit;
         padding-top: 24px;
+        // typography
         @extend %secondary-font;
         @include font-size(4.9rem, 400);
         color: $sign-up-text-color;
         writing-mode: vertical-lr;
+        // box-model & typography
         @extend %ellipsis;
+        // decor
         background-color: $sign-up-background-color;
+        // other
         user-select: none;
       }
     }
 
     .main__form {
+      // position
       z-index: 2;
+      // box-model
       width: 528px;
       padding: 40px 22px 0 20px;
 
       .form__title {
+        // typography
         @include font-size(2.2rem, 500);
         line-height: 2.6rem;
         letter-spacing: -0.4px;
+        // box-model & typography
         @extend %ellipsis;
       }
 
       .form__text {
+        // box-model
         margin-bottom: 20px;
+        // typography
         @include font-size(1.4rem, 300);
         line-height: 1.6rem;
+        // box-model & typography
         @extend %ellipsis;
       }
 
       .form__input {
+        // box-model
         @include alignment(flex-start, flex-start, row);
         flex-wrap: wrap;
-        row-gap: 18px;
+        row-gap: 16px;
         column-gap: 15px;
-        margin-bottom: 102px;
+        margin-bottom: 101px;
 
         .input__box {
+          // position
           position: relative;
+          // box-model
           @include alignment(flex-start, flex-start, column);
-          row-gap: 3px;
+          row-gap: 4px;
           width: 235px;
 
           .box__n-name {
-            margin-bottom: 2px;
+            // position
             position: relative;
+            // box-model
+            margin-bottom: 2px;
+            // decor
             background-color: $primary-background-color;
+            // other
             cursor: pointer;
           }
 
           .box__item {
+            // box-model
             @include alignment(space-between, center, row);
             width: 236px;
 
             .item__select {
+              // position
               position: relative;
 
               .select__d-name,
               .select__m-name,
               .select__y-name {
+                // box-model
                 width: 100%;
+                // typography
                 @include font-size(1.4rem, 400);
                 color: $primary-text-color;
                 line-height: 1.6rem;
+                // decor
                 background-color: $transparent-background-color;
+                // other
                 cursor: pointer;
               }
 
               .select__d-line,
               .select__m-line,
               .select__y-line {
+                // position
                 position: absolute;
                 bottom: 0;
                 left: 0;
+                // box-model
                 width: 100%;
                 height: 1px;
+                // decor
                 background-color: $border-background-color;
               }
             }
 
             .d-select {
+              // box-model
               width: 57px;
             }
 
             .m-select {
+              // box-model
               width: 91px;
             }
 
             .y-select {
+              // box-model
               width: 67px;
             }
           }
 
           .text {
+            // box-model
             width: 100%;
+            // typography
             @include font-size(1.2rem, 300);
             color: $placeholder-text-color;
             line-height: 1.4rem;
+            // box-model & typography
             @extend %ellipsis;
           }
 
           .name {
+            // box-model
             width: 100%;
+            // typography
             @include font-size(1.4rem, 400);
             color: $primary-text-color;
             line-height: 1.6rem;
+            // decor
             background-color: $transparent-background-color;
           }
 
           .name-error {
+            // typography
             color: $error-text-color;
           }
 
           .line {
+            // box-model
             width: 100%;
             height: 1px;
+            // decor
             background-color: $border-background-color;
           }
 
           .line-error {
-            position: relative;
-            bottom: 1px;
+            // position
+            position: absolute;
+            // box-model
+            left: 0;
+            bottom: -5px;
             height: 2px;
+            width: 100%;
+            // decor
             background-color: $border-error-background-color;
+            // transition
+            @extend %transition;
           }
 
           .check {
-            display: none;
+            // position
             position: absolute;
             right: 0;
             bottom: 8px;
+            // box-model
             width: 12px;
             height: 8px;
+            // decor
             background-image: url(./assets/icons/check.svg);
             background-repeat: no-repeat;
             background-size: contain;
             opacity: 0;
-            @extend %transition;
           }
 
           .check-true {
-            display: block;
+            // decor
             opacity: 1;
+            // transition
+            @extend %transition;
           }
 
           .arrow {
+            // position
             position: absolute;
             bottom: 9px;
             right: 0;
+            // box-model
             width: 8px;
             height: 4px;
+            // decor
             background-color: $transparent-background-color;
             background-image: url(./assets/icons/arrow-down.svg);
             background-repeat: no-repeat;
             background-size: 100%;
+            // other
             cursor: pointer;
           }
 
+          .box__e-name {
+            width: 210px;
+          }
+
           .box__checkbox {
+            // box-model
             @include alignment(flex-start, center, row);
             column-gap: 10px;
 
             .checkbox__g-name {
+              // position
               position: relative;
+              // box-model
               @include alignment(flex-start, center, row);
               padding-left: 18px;
               height: 24px;
+              // other
               cursor: pointer;
 
               .g-name__value {
                 &:checked {
                   + .g-name__check {
+                    // box-model
                     display: block;
+                    // decor
                     opacity: 1;
                   }
                 }
@@ -196,26 +267,33 @@
 
               .g-name__circle,
               .g-name__check {
+                // position
                 position: absolute;
                 top: 50%;
                 left: 0;
+                // decor
                 border-radius: 50%;
                 border: 1px solid $radio-background-color;
+                // transition
                 transform: translateY(-50%);
               }
 
               .g-name__circle {
+                // box-model
                 width: 12px;
                 height: 12px;
               }
 
               .g-name__check {
-                display: none;
+                // position
                 left: 3px;
+                // box-model
+                display: none;
                 width: 6px;
                 height: 6px;
+                // decor
                 background-color: $radio-background-color;
-                position: 0;
+                // transition
                 @extend %transition;
               }
             }
@@ -224,27 +302,36 @@
       }
 
       .form__submit {
+        // box-model
         @include alignment(space-between, center, row);
 
         .submit__login {
+          // box-model
           width: 150px;
+          // typography
           @include font-size(1.3rem, 300);
           color: $secondary-text-color;
 
           .login__text {
+            // box-model & typography
             @extend %ellipsis;
           }
         }
 
         .submit__complete {
           .complete__button {
+            // box-model
             width: 154px;
             padding: 5px 26px 6px 25px;
+            // typography
             @extend %secondary-font;
             @include font-size(1.4rem, 400);
             color: $sign-up-text-color;
+            // box-model & typography
             @extend %ellipsis;
+            // decor
             background-color: $sign-up-background-color;
+            // other
             cursor: pointer;
           }
         }
@@ -253,107 +340,10 @@
   }
 
   .main__picture {
+    // position
     z-index: 1;
     position: absolute;
     bottom: 0;
     right: 0;
-  }
-}
-
-@media (min-width: $width-tablet-min) and (max-width: $width-tablet-max) {
-  .main {
-    .main__wrapper {
-      height: 700px;
-
-      .main__title {
-        width: 90px;
-      }
-
-      .main__form {
-        width: 280px;
-        padding: 40px 22px 0 22px;
-
-        .form__text {
-          display: inline-block;
-          white-space: initial;
-          text-overflow: clip;
-        }
-
-        .form__input {
-          margin-bottom: 50px;
-        }
-
-        .form__submit {
-          @include alignment(space-between, center, column);
-          row-gap: 5px;
-
-          .submit__login {
-            order: 2;
-          }
-
-          .submit__complete {
-            order: 1;
-
-            .complete__button {
-              padding: 5px 25px 6px 24px;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-@media (min-width: $width-mobile-min) and (max-width: $width-mobile-max) {
-  .main {
-    .main__wrapper {
-      @include alignment(flex-start, flex-start, column);
-      height: 700px;
-
-      .main__title {
-        height: initial;
-        width: 100%;
-        transform: scale(1);
-
-        .title__text {
-          padding-top: 5px;
-          padding-right: 15px;
-          padding-bottom: 5px;
-          @include font-size(2.9rem, 400);
-          writing-mode: inherit;
-          text-align: right;
-        }
-      }
-
-      .main__form {
-        width: 280px;
-        padding: 22px 22px 0 22px;
-
-        .form__text {
-          white-space: initial;
-        }
-
-        .form__input {
-          margin-bottom: 30px;
-        }
-
-        .form__submit {
-          @include alignment(space-between, center, column);
-          row-gap: 5px;
-
-          .submit__login {
-            order: 2;
-          }
-
-          .submit__complete {
-            order: 1;
-
-            .complete__button {
-              padding: 5px 25px 6px 24px;
-            }
-          }
-        }
-      }
-    }
   }
 }

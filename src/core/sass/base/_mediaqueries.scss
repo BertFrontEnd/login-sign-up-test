@@ -1,0 +1,120 @@
+
+@media (min-width: $width-tablet-min) and (max-width: $width-tablet-max) {
+  .main {
+    .main__wrapper {
+      // box-model
+      height: 700px;
+
+      .main__title {
+        // box-model
+        width: 90px;
+      }
+
+      .main__form {
+        // box-model
+        width: 280px;
+        padding: 40px 22px 0 22px;
+
+        .form__text {
+          // box-model
+          display: inline-block;
+          // typography
+          white-space: initial;
+          text-overflow: clip;
+        }
+
+        .form__input {
+          // box-model
+          margin-bottom: 50px;
+        }
+
+        .form__submit {
+          // box-model
+          @include alignment(space-between, center, column);
+          row-gap: 5px;
+
+          .submit__login {
+            // box-model
+            order: 2;
+          }
+
+          .submit__complete {
+            // box-model
+            order: 1;
+
+            .complete__button {
+              // box-model
+              padding: 5px 25px 6px 24px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $width-mobile-min) and (max-width: $width-mobile-max) {
+  .main {
+    .main__wrapper {
+      // box-model
+      @include alignment(flex-start, flex-start, column);
+      height: 700px;
+
+      .main__title {
+        // box-model
+        height: initial;
+        width: 100%;
+        // transition
+        transform: scale(1);
+
+        .title__text {
+          // box-model
+          padding-top: 5px;
+          padding-right: 15px;
+          padding-bottom: 5px;
+          // typography
+          @include font-size(2.9rem, 400);
+          writing-mode: inherit;
+          text-align: right;
+        }
+      }
+
+      .main__form {
+        // box-model
+        width: 280px;
+        padding: 22px 22px 0 22px;
+
+        .form__text {
+          // typography
+          white-space: initial;
+        }
+
+        .form__input {
+          // box-model
+          margin-bottom: 30px;
+        }
+
+        .form__submit {
+          // box-model
+          @include alignment(space-between, center, column);
+          row-gap: 5px;
+
+          .submit__login {
+            // box-model
+            order: 2;
+          }
+
+          .submit__complete {
+            // box-model
+            order: 1;
+
+            .complete__button {
+              // box-model
+              padding: 5px 25px 6px 24px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

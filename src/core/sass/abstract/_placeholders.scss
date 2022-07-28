@@ -1,17 +1,21 @@
+// transition
 %transition {
   transition: all 0.3s ease-out;
 }
 
+// box-model & typography
 %ellipsis {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
 
+// typography
 %primary-font {
   font-family: 'WorkSans', sans-serif;
 }
 
+// typography
 %secondary-font {
   font-family: 'PTSans', sans-serif;
 }

@@ -1,0 +1,30 @@
+.shake-x {
+  // animation
+  animation-name: shakeX;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes shakeX {
+  0% {
+    // transition
+    transform: translateZ(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    // transition
+    transform: translate3d(-5px, 0, 0);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    // transition
+    transform: translate3d(5px, 0, 0);
+  }
+}
