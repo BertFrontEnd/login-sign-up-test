@@ -1,10 +1,14 @@
 .main {
+  position: relative;
+  overflow: hidden;
+
   .main__wrapper {
     @include alignment(flex-start, flex-start, row);
     height: 481px;
     background-color: $primary-background-color;
 
     .main__title {
+      z-index: 2;
       height: 100%;
       width: 137px;
       transform: scale(-1);
@@ -24,13 +28,14 @@
     }
 
     .main__form {
+      z-index: 2;
       width: 528px;
       padding: 40px 22px 0 20px;
 
       .form__title {
         @include font-size(2.2rem, 500);
         line-height: 2.6rem;
-        letter-spacing: 1px;
+        letter-spacing: -0.4px;
         @extend %ellipsis;
       }
 
@@ -75,7 +80,7 @@
                 @include font-size(1.4rem, 400);
                 color: $primary-text-color;
                 line-height: 1.6rem;
-                background-color: $primary-background-color;
+                background-color: $transparent-background-color;
                 cursor: pointer;
               }
 
@@ -117,6 +122,7 @@
             @include font-size(1.4rem, 400);
             color: $primary-text-color;
             line-height: 1.6rem;
+            background-color: $transparent-background-color;
           }
 
           .name-error {
@@ -161,6 +167,7 @@
             right: 0;
             width: 8px;
             height: 4px;
+            background-color: $transparent-background-color;
             background-image: url(./assets/icons/arrow-down.svg);
             background-repeat: no-repeat;
             background-size: 100%;
@@ -243,6 +250,13 @@
         }
       }
     }
+  }
+
+  .main__picture {
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+    right: 0;
   }
 }
 

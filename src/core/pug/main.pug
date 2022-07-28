@@ -1,9 +1,10 @@
 - let d = 0;
 - let y = 1969;
 - const monthArray = ["December", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November"]
+- const nationalityArray = ['American', 'Austrian', 'Belarusian', 'Belgian', 'British', 'Bulgarian', 'Canadian', 'Czech', 'Danish', 'Dutch', 'Estonian', 'Finnish', 'French', 'German', 'Greek', 'Hungarian', 'Irish', 'Italian', 'Latvian', 'Lithuanian', 'Mexican', 'Norwegian', 'Polish', 'Romanian', 'Russian', 'Scottish', 'Slovak/Slovakian', 'Spanish', 'Swedish', 'Swiss', 'Ukrainian', 'Welsh']
 
 main.main
-	section.main__wrapper.wrapper
+	.main__wrapper.wrapper
 		aside.main__title
 			h1.title__text Sign up
 		form.main__form(action="/")
@@ -12,43 +13,41 @@ main.main
 			.form__input
 				.input__box
 					span.box__f-text.text First Name
-					input.box__f-name.name(type="text", name="", required, value="Alice")
+					input.box__f-name.name(type="text", required, value="Alice")
 					span.box__f-line.line
 				.input__box
 					span.box__l-text.text Last Name
-					input.box__l-name.name(type="text", name="", required, value="Miller")
+					input.box__l-name.name(type="text", required, value="Miller")
 					span.box__l-line.line
 				.input__box
 					span.box__n-text.text Nationality
-					select.box__n-name.name(required)
-						option.n-name__value(value="American") American
-						option.n-name__value(value="American") American
-						option.n-name__value(value="Belarus") Belarus
-						option.n-name__value(value="Canada") Canada
+					select.box__n-name.name
+						each n in nationalityArray
+							option.m-name__value(value=n) #{n}
 					span.box__n-line.line
 					span.box__n-arrow.arrow
 				.input__box
 					span.box__e-text.text E-mail
-					input.box__e-name.name(type="e-mail", name="", required, value="alice.miller@yahoo.com")
+					input.box__e-name.name(type="email", required, value="alice.miller@yahoo.com")
 					span.box__e-line.line
 					span.box__e-check.check.check-true
 				.input__box
 					span.box__b-text.text Date of Birth
 					.box__item
 						.item__select.d-select
-							select.select__d-name(required)
+							select.select__d-name
 								while d < 31
 									option.d-name__value(value=++d) #{d}
 							span.select__d-line.line
 							span.box__d-arrow.arrow
 						.item__select.m-select
-							select.select__m-name(required)
+							select.select__m-name
 								each m in monthArray
 									option.m-name__value(value=m) #{m}
 							span.select__m-line
 							span.box__m-arrow.arrow
 						.item__select.y-select
-							select.select__y-name(required)
+							select.select__y-name
 								while y < 2022
 									option.y-name__value(value=++y) #{y}
 							span.select__y-line
@@ -66,15 +65,16 @@ main.main
 							span.g-name__circle
 				.input__box
 					span.box__p-text.text Password
-					input.box__p-name.name(type="password", name="", required)
+					input.box__p-name.name(type="password", required)
 					span.box__p-line.line
 				.input__box
 					span.box__c-text.text Confirm Password
-					input.box__c-name.name(type="password", name="", required)
+					input.box__c-name.name(type="password", required)
 					span.box__c-line.line
 			.form__submit
 				.submit__login
 					p.login__text!= "Have an account?&nbsp;"
 						a(href="#") Login
 				.submit__complete
-					input.complete__button(type="submit", name="", value="Complete Signup")
+					input.complete__button(type="submit", value="Complete Signup")
+	object.main__picture(type="image/svg+xml", data="./assets/icons/person.svg")

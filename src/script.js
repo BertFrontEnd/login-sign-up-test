@@ -21,14 +21,42 @@ window.addEventListener('load', () => {
   });
 });
 
-/**
- * 3. Write the function to sum added arguments by chain of calls
- * @param {Number} a Number to add
- * @example sum(5)(3)()   // 8
- */
-function add(a) {
-  return function (b) {
-    return a + b;
-  };
-}
-console.log(add(6)(8)());
+const array = [
+  'British',
+  'Scottish',
+  'Irish',
+  'Welsh',
+  'Danish',
+  'Finnish',
+  'Norwegian',
+  'Swedish',
+  'Swiss',
+  'Estonian',
+  'Latvian',
+  'Lithuanian',
+  'Austrian',
+  'Belgian',
+  'French',
+  'German',
+  'Italian',
+  'Dutch',
+  'American',
+  'Canadian',
+  'Mexican',
+  'Ukrainian',
+  'Russian',
+  'Belarusian',
+  'Polish',
+  'Czech',
+  'Slovak/Slovakian',
+  'Hungarian',
+  'Romanian',
+  'Bulgarian',
+  'Greek',
+  'Spanish',
+];
+
+console.log(array);
+const nationalityArray = array.sort();
+console.log(nationalityArray);
+console.log('object');
