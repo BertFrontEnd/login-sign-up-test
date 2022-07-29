@@ -51,3 +51,10 @@ html {
     }
   }
 }
+
+.shake-x {
+  // animation
+  animation-name: shakeX;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}

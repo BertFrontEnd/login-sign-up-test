@@ -80,6 +80,12 @@
           @include alignment(flex-start, flex-start, column);
           row-gap: 4px;
           width: 235px;
+          // transition
+          /* transform: translateY(100%);
+          opacity: 0; */
+          // animation
+          animation: appearance 1s linear backwards;
+          animation-delay: calc(0.2s * var(--i));
 
           .box__n-name {
             // position
@@ -185,9 +191,9 @@
           .line-error {
             // position
             position: absolute;
-            // box-model
             left: 0;
             bottom: -5px;
+            // box-model
             height: 2px;
             width: 100%;
             // decor
@@ -334,6 +340,58 @@
             // other
             cursor: pointer;
           }
+        }
+      }
+    }
+
+    .main__request {
+      // position
+      z-index: 2;
+      position: relative;
+      // box-model
+      width: 528px;
+
+      .request__title {
+        // position
+        position: absolute;
+        left: 64px;
+        top: 218px;
+        // typography
+        @include font-size(2.2rem, 500);
+        line-height: 2.6rem;
+        letter-spacing: -0.4px;
+        // box-model & typography
+        @extend %ellipsis;
+      }
+
+      .request__text {
+        // position
+        position: absolute;
+        left: 64px;
+        top: 254px;
+        // box-model
+        margin-bottom: 20px;
+        // typography
+        @include font-size(1.4rem, 300);
+        line-height: 1.6rem;
+        // box-model & typography
+        @extend %ellipsis;
+      }
+
+      .request__login {
+        // position
+        position: absolute;
+        left: 20px;
+        top: 420px;
+        // box-model
+        width: 150px;
+        // typography
+        @include font-size(1.3rem, 300);
+        color: $secondary-text-color;
+
+        .login__text {
+          // box-model & typography
+          @extend %ellipsis;
         }
       }
     }

@@ -23,7 +23,7 @@ export const path = {
     pug: `${srcFolder}/index.pug`,
     images: `${srcFolder}/assets/images/**/*.{jpg,jpeg,png,gif,ico,webp}`,
     icons: `${srcFolder}/assets/icons/**/*.svg`,
-    files: `${srcFolder}/assets/*.{css,svg,ico,png}`,
+    files: `${srcFolder}/assets/*.{css,svg,ico,png,json}`,
   },
   watch: {
     js: `${srcFolder}/**/*.js`,
@@ -31,7 +31,7 @@ export const path = {
     pug: `${srcFolder}/**/*.pug`,
     images: `${srcFolder}/assets/images/*.{jpg,jpeg,png,gif,ico,webp}`,
     icons: `${srcFolder}/assets/icons/*.svg`,
-    files: `${srcFolder}/assets/*.{css,svg,ico,png}`,
+    files: `${srcFolder}/assets/*.{css,svg,ico,png,json}`,
   },
   clean: buildFolder,
   buildFolder: buildFolder,

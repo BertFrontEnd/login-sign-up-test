@@ -1,4 +1,4 @@
-export const setValidationForm = () => {
+export const setValidationEmail = () => {
   const form = document.querySelector('.main__form');
   const email = document.querySelector('.box__e-name');
   const emailError = document.querySelector('.box__e-line');

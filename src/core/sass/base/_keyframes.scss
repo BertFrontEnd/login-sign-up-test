@@ -1,10 +1,3 @@
-.shake-x {
-  // animation
-  animation-name: shakeX;
-  animation-duration: 1s;
-  animation-fill-mode: both;
-}
-
 @keyframes shakeX {
   0% {
     // transition
@@ -26,5 +19,20 @@
   80% {
     // transition
     transform: translate3d(5px, 0, 0);
+  }
+}
+
+@keyframes appearance {
+  0% {
+    transform: translateY(200%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(100%);
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
