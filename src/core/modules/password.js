@@ -5,7 +5,7 @@ export const setValidationPassword = () => {
   const passwordError = document.querySelector('.box__p-line');
   const confirmPasswordError = document.querySelector('.box__c-line');
 
-  const sendButton = document.querySelector('.complete__button');
+  const message = document.querySelector('.message__text');
 
   const validationInput = (selectorInput, selectorLine) => {
     let upperCaseLetters = /[A-Z]/g;
@@ -18,10 +18,10 @@ export const setValidationPassword = () => {
       selectorInput.value.length >= 8
     ) {
       selectorLine.classList.remove('line-error');
-      sendButton.removeAttribute('disabled');
+      message.classList.remove('message-error');
     } else {
       selectorLine.classList.add('line-error');
-      sendButton.setAttribute('disabled', 'disabled');
+      message.classList.add('message-error');
     }
   };
 
@@ -29,10 +29,8 @@ export const setValidationPassword = () => {
     if (!confirmPasswordInput.value == '') {
       if (confirmPasswordInput.value == passwordInput.value) {
         confirmPasswordError.classList.remove('line-error');
-        sendButton.removeAttribute('disabled');
       } else {
         confirmPasswordError.classList.add('line-error');
-        sendButton.setAttribute('disabled', 'disabled');
       }
     }
   };
@@ -41,10 +39,8 @@ export const setValidationPassword = () => {
     if (!passwordInput.value == '') {
       if (passwordInput.value == confirmPasswordInput.value) {
         confirmPasswordError.classList.remove('line-error');
-        sendButton.removeAttribute('disabled');
       } else {
         confirmPasswordError.classList.add('line-error');
-        sendButton.setAttribute('disabled', 'disabled');
       }
     }
   };

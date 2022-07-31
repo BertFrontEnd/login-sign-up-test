@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./assets/favicon.svg">
-    <link rel="stylesheet" href="./assets/reset.css?_v=20220729201317">
-    <link rel="stylesheet" href="./assets/fonts.css?_v=20220729201317">
-    <link rel="stylesheet" href="style.css?_v=20220729201317">
+    <link rel="stylesheet" href="./assets/reset.css?_v=20220801000806">
+    <link rel="stylesheet" href="./assets/fonts.css?_v=20220801000806">
+    <link rel="stylesheet" href="style.css?_v=20220801000806">
     <title>Login Sign up Test</title>
-    <script defer src="script.js?_v=20220729201317"></script>
+    <script defer src="script.js?_v=20220801000806"></script>
   </head>
   <body>
     <header class="header">
@@ -20,15 +20,15 @@
         <aside class="main__title">
           <h1 class="title__text">Sign up</h1>
         </aside>
-        <form class="main__form" action="/">
+        <form class="main__form" novalidate>
           <h2 class="form__title">New user?</h2>
           <h3 class="form__text">Use the form below to create your account.</h3>
           <div class="form__input">
             <div class="input__box" style="--i: 1"><span class="box__f-text text">First Name</span>
-              <input class="box__f-name name" type="text" required title="Enter your First Name" placeholder="Alice"><span class="box__f-line line"></span>
+              <input class="box__f-name name" type="text" required title="Enter your First Name" placeholder="Alice" value="Alice"><span class="box__f-line line"></span>
             </div>
             <div class="input__box" style="--i: 2"><span class="box__l-text text">Last Name</span>
-              <input class="box__l-name name" type="text" required title="Enter your Last Name" placeholder="Miller"><span class="box__l-line line"></span>
+              <input class="box__l-name name" type="text" required title="Enter your Last Name" placeholder="Miller" value="Miller"><span class="box__l-line line"></span>
             </div>
             <div class="input__box" style="--i: 3"><span class="box__n-text text">Nationality</span>
               <select class="box__n-name name">
@@ -64,10 +64,10 @@
                 <option class="n-name__value" value="Swiss">Swiss</option>
                 <option class="n-name__value" value="Ukrainian">Ukrainian</option>
                 <option class="n-name__value" value="Welsh">Welsh</option>
-              </select><span class="box__n-line line"></span><span class="box__n-arrow arrow"></span>
+              </select><span class="box__n-arrow arrow"></span><span class="box__n-line line"></span>
             </div>
             <div class="input__box" style="--i: 4"><span class="box__e-text text">E-mail</span>
-              <input class="box__e-name name" type="email" required title="Enter your E-mail as placeholder" placeholder="alice.miller@yahoo.com"><span class="box__e-line line"></span><span class="box__e-check check"></span>
+              <input class="box__e-name name" type="email" required title="Enter your E-mail as placeholder" placeholder="alice.miller@yahoo.com" value="alice.miller@yahoo.com"><span class="box__e-line line"></span><span class="box__e-check check"></span>
             </div>
             <div class="input__box" style="--i: 5"><span class="box__b-text text">Date of Birth</span>
               <div class="box__item">
@@ -104,7 +104,7 @@
                     <option class="d-name__value" value="29">29</option>
                     <option class="d-name__value" value="30">30</option>
                     <option class="d-name__value" value="31">31</option>
-                  </select><span class="select__d-line line"></span><span class="box__d-arrow arrow"></span>
+                  </select><span class="box__d-arrow arrow"></span><span class="select__d-line line"></span>
                 </div>
                 <div class="item__select m-select">
                   <select class="select__m-name">
@@ -120,7 +120,7 @@
                     <option class="m-name__value" value="September">September</option>
                     <option class="m-name__value" value="October">October</option>
                     <option class="m-name__value" value="November">November</option>
-                  </select><span class="select__m-line"></span><span class="box__m-arrow arrow"></span>
+                  </select><span class="box__m-arrow arrow"></span><span class="select__m-line"></span>
                 </div>
                 <div class="item__select y-select">
                   <select class="select__y-name">
@@ -177,7 +177,7 @@
                     <option class="y-name__value" value="2020">2020</option>
                     <option class="y-name__value" value="2021">2021</option>
                     <option class="y-name__value" value="2022">2022</option>
-                  </select><span class="select__y-line"></span><span class="box__y-arrow arrow"></span>
+                  </select><span class="box__y-arrow arrow"></span><span class="select__y-line"></span>
                 </div>
               </div>
             </div>
@@ -197,6 +197,9 @@
             <div class="input__box" style="--i: 8"><span class="box__c-text text">Confirm Password</span>
               <input class="box__c-name name" type="password" required minlength="8" title="The password must contain at least one number and one uppercase and lowercase letter, and at least 8 characters or more"><span class="box__c-line line"></span>
             </div>
+          </div>
+          <div class="form-message">
+            <p class="message__text">The password must contain at least one number and one uppercase and lowercase letter, and at least 8 characters or more</p>
           </div>
           <div class="form__submit">
             <div class="submit__login">

@@ -1,6 +1,6 @@
 export const requestToServer = () => {
   const getAnswer = () => {
-    const url = './assets/server-ok.jso';
+    const url = './assets/server-ok.json';
     /* const url = null; */
     const error = './assets/server-error.json';
 
@@ -16,7 +16,6 @@ export const requestToServer = () => {
     return request;
   };
 
-  const button = document.querySelector('.complete__button');
   const form = document.querySelector('.main__form');
   const section = document.querySelector('.main__title');
 
@@ -37,6 +36,5 @@ export const requestToServer = () => {
     );
   };
 
-  button.addEventListener('click', renderAnswer);
-  form.addEventListener('submit', renderAnswer);
+  renderAnswer();
 };

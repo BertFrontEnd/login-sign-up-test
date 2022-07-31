@@ -7,28 +7,28 @@ main.main
 	.main__wrapper.wrapper
 		aside.main__title
 			h1.title__text Sign up
-		form.main__form(action="/")
+		form.main__form(novalidate)
 			h2.form__title New user?
 			h3.form__text Use the form below to create your account.
 			.form__input
 				.input__box(style="--i: 1")
 					span.box__f-text.text First Name
-					input.box__f-name.name(type="text", required, title="Enter your First Name", placeholder="Alice")
+					input.box__f-name.name(type="text", required, title="Enter your First Name", placeholder="Alice", value="Alice")
 					span.box__f-line.line
 				.input__box(style="--i: 2")
 					span.box__l-text.text Last Name
-					input.box__l-name.name(type="text", required, title="Enter your Last Name", placeholder="Miller")
+					input.box__l-name.name(type="text", required, title="Enter your Last Name", placeholder="Miller", value="Miller")
 					span.box__l-line.line
 				.input__box(style="--i: 3")
 					span.box__n-text.text Nationality
 					select.box__n-name.name
 						each n in nationalityArray
 							option.n-name__value(value=n) #{n}
-					span.box__n-line.line
 					span.box__n-arrow.arrow
+					span.box__n-line.line
 				.input__box(style="--i: 4")
 					span.box__e-text.text E-mail
-					input.box__e-name.name(type="email", required, title="Enter your E-mail as placeholder",  placeholder="alice.miller@yahoo.com")
+					input.box__e-name.name(type="email", required, title="Enter your E-mail as placeholder",  placeholder="alice.miller@yahoo.com", value="alice.miller@yahoo.com")
 					span.box__e-line.line
 					span.box__e-check.check
 				.input__box(style="--i: 5")
@@ -38,20 +38,20 @@ main.main
 							select.select__d-name
 								while d < 31
 									option.d-name__value(value=++d) #{d}
-							span.select__d-line.line
 							span.box__d-arrow.arrow
+							span.select__d-line.line
 						.item__select.m-select
 							select.select__m-name
 								each m in monthArray
 									option.m-name__value(value=m) #{m}
-							span.select__m-line
 							span.box__m-arrow.arrow
+							span.select__m-line
 						.item__select.y-select
 							select.select__y-name
 								while y < 2022
 									option.y-name__value(value=++y) #{y}
-							span.select__y-line
 							span.box__y-arrow.arrow
+							span.select__y-line
 				.input__box(style="--i: 6")
 					span.box__g-text.text Gender
 					.box__checkbox
@@ -71,6 +71,8 @@ main.main
 					span.box__c-text.text Confirm Password
 					input.box__c-name.name(type="password", required, minlength='8', title="The password must contain at least one number and one uppercase and lowercase letter, and at least 8 characters or more")
 					span.box__c-line.line
+			.form-message
+				p.message__text The password must contain at least one number and one uppercase and lowercase letter, and at least 8 characters or more
 			.form__submit
 				.submit__login
 					p.login__text!= "Have an account?&nbsp;"

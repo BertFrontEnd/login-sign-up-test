@@ -69,9 +69,9 @@
         // box-model
         @include alignment(flex-start, flex-start, row);
         flex-wrap: wrap;
-        row-gap: 16px;
+        row-gap: 17px;
         column-gap: 15px;
-        margin-bottom: 101px;
+        margin-bottom: 5px;
 
         .input__box {
           // position
@@ -80,9 +80,7 @@
           @include alignment(flex-start, flex-start, column);
           row-gap: 4px;
           width: 235px;
-          // transition
-          /* transform: translateY(100%);
-          opacity: 0; */
+          height: 41px;
           // animation
           animation: appearance 1s linear backwards;
           animation-delay: calc(0.2s * var(--i));
@@ -192,7 +190,7 @@
             // position
             position: absolute;
             left: 0;
-            bottom: -5px;
+            bottom: 0px;
             // box-model
             height: 2px;
             width: 100%;
@@ -237,18 +235,26 @@
             background-image: url(./assets/icons/arrow-down.svg);
             background-repeat: no-repeat;
             background-size: 100%;
+            // transition
+            @extend %transition;
             // other
             cursor: pointer;
           }
 
+          .arrow-active {
+            // transition
+            transform: rotateX(180deg);
+          }
+
           .box__e-name {
+            // box-model
             width: 210px;
           }
 
           .box__checkbox {
             // box-model
             @include alignment(flex-start, center, row);
-            column-gap: 10px;
+            column-gap: 11px;
 
             .checkbox__g-name {
               // position
@@ -304,6 +310,27 @@
               }
             }
           }
+        }
+      }
+
+      .form-message {
+        // box-model
+        margin-bottom: 62px;
+
+        .message__text {
+          // typography
+          @include font-size(1rem, 400);
+          color: $placeholder-text-color;
+          line-height: 1.6rem;
+          // decor
+          opacity: 0;
+          // transition
+          @extend %transition;
+        }
+
+        .message-error {
+          // decor
+          opacity: 1;
         }
       }
 

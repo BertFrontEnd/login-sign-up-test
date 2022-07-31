@@ -24,7 +24,18 @@
 
         .form__input {
           // box-model
-          margin-bottom: 50px;
+          margin-bottom: 5px;
+        }
+
+        .form-message {
+          // box-model
+          margin-bottom: 15px;
+
+          .message__text {
+            // typography
+            @include font-size(1rem, 400);
+            line-height: 1.2rem;
+          }
         }
 
         .form__submit {
@@ -54,7 +65,7 @@
 
         .request__login {
           left: 65px;
-          top: 654px;
+          top: 665px;
         }
       }
     }
@@ -66,7 +77,7 @@
     .main__wrapper {
       // box-model
       @include alignment(flex-start, flex-start, column);
-      height: 700px;
+      height: 715px;
 
       .main__title {
         // box-model
@@ -99,7 +110,18 @@
 
         .form__input {
           // box-model
-          margin-bottom: 30px;
+          margin-bottom: 5px;
+        }
+
+        .form-message {
+          // box-model
+          margin-bottom: 10px;
+
+          .message__text {
+            // typography
+            @include font-size(0.8rem, 400);
+            line-height: 1rem;
+          }
         }
 
         .form__submit {
@@ -129,7 +151,7 @@
 
         .request__login {
           left: 65px;
-          top: 609px;
+          top: 629px;
         }
       }
     }
