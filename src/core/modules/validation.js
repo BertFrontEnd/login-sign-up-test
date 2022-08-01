@@ -51,8 +51,8 @@ export const setValidation = () => {
       firstName.value.length === 0 ||
       lastName.value.length === 0 ||
       !email.validity.valid ||
-      (passwordInput.value !== confirmPasswordInput.value &&
-        passwordInput.value.length === 0) ||
+      passwordInput.value !== confirmPasswordInput.value ||
+      passwordInput.value.length === 0 ||
       confirmPasswordInput.value.length === 0
     ) {
       e.preventDefault();
@@ -60,6 +60,8 @@ export const setValidation = () => {
       passwordError.classList.add('line-error');
       confirmPasswordError.classList.add('line-error');
       message.classList.add('message-error');
+      passwordInput.value = '';
+      confirmPasswordInput.value = '';
     } else {
       e.preventDefault();
       requestToServer();

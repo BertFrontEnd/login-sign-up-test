@@ -1,9 +1,6 @@
 import { setSelectItem } from './core/modules/select.js';
 setSelectItem();
 
-import { setValidationPassword } from './core/modules/password.js';
-setValidationPassword();
-
 import { resetPassword } from './core/modules/reset.js';
 resetPassword();
 
@@ -12,3 +9,6 @@ arrowRotate();
 
 import { setValidation } from './core/modules/validation.js';
 setValidation();
+
+import { setValidationPassword } from './core/modules/password.js';
+setValidationPassword();

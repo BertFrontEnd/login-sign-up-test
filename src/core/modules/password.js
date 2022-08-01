@@ -1,8 +1,8 @@
 export const setValidationPassword = () => {
   const passwordInput = document.querySelector('.box__p-name');
-  const confirmPasswordInput = document.querySelector('.box__c-name');
-
   const passwordError = document.querySelector('.box__p-line');
+
+  const confirmPasswordInput = document.querySelector('.box__c-name');
   const confirmPasswordError = document.querySelector('.box__c-line');
 
   const message = document.querySelector('.message__text');
@@ -26,22 +26,26 @@ export const setValidationPassword = () => {
   };
 
   const passwordMatch = () => {
-    if (!confirmPasswordInput.value == '') {
-      if (confirmPasswordInput.value == passwordInput.value) {
-        confirmPasswordError.classList.remove('line-error');
-      } else {
-        confirmPasswordError.classList.add('line-error');
-      }
+    if (
+      !confirmPasswordInput.value == '' &&
+      confirmPasswordInput.value == passwordInput.value
+    ) {
+      confirmPasswordError.classList.remove('line-error');
+    } else {
+      confirmPasswordError.classList.add('line-error');
     }
   };
 
   const confirmPasswordMatch = () => {
-    if (!passwordInput.value == '') {
-      if (passwordInput.value == confirmPasswordInput.value) {
-        confirmPasswordError.classList.remove('line-error');
-      } else {
-        confirmPasswordError.classList.add('line-error');
-      }
+    if (
+      !passwordInput.value == '' &&
+      passwordInput.value == confirmPasswordInput.value
+    ) {
+      confirmPasswordError.classList.remove('line-error');
+    } else if (passwordInput.value == '') {
+      passwordError.classList.add('line-error');
+    } else {
+      confirmPasswordError.classList.add('line-error');
     }
   };
 
